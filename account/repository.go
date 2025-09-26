@@ -3,6 +3,7 @@ package account
 import (
 	"context"
 	"database/sql"
+	
 )
 
 type Repository interface {
@@ -26,7 +27,7 @@ func NewPostgresRepository(url string) (Repository, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &postgresRepository{db}, ni
+	return &postgresRepository{db}, nil
 
 }
 
